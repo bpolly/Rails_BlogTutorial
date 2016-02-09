@@ -1,0 +1,17 @@
+<div class="post_container">
+  <% if params[:action] == "index" %>
+    <p class="post_title"><%= link_to post.title, post_path(post) %></p>
+  <% end %>
+  <p class="post_author_show">By: <span class="post_author_name"><%= post.author %></span></p>
+  <p class="post_date">Posted: <%= post.created_at.strftime("%D") %></p>
+  <p class="post_content_show" style="white-space: pre-line; overflow-wrap: break-word;"><%= post.content %></p>
+  <% if params[:action] == "show" %>
+    <p style="text-align: right"><%= link_to 'Edit', edit_post_path(post), class:"btn btn-xs btn-default" %>
+    <%= link_to 'Add Comment', new_post_comment_path(post), class:"btn btn-xs btn-default" %>
+    <%= link_to 'Delete', post, class:"btn btn-xs btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% elsif params[:action] == "index" %>
+    <p style="text-align: right"><%= link_to 'Edit', edit_post_path(post), class:"btn btn-xs btn-default" %>
+    <%= link_to 'Add Comment', new_post_comment_path(post), class:"btn btn-xs btn-default" %>
+    </p>
+  <% end %>
+</div>

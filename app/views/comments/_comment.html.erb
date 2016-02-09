@@ -1,0 +1,11 @@
+<div class="comment_container">
+  <div class="row">
+    <div class="col-md-3">
+        <p class="comment_author_show"><%= comment.author %></p>
+    </div>
+    <div class="col-md-3 col-md-offset-6">
+      <p class="comment_date"><%= comment.created_at.strftime("%B %-d %Y") %></p>
+    </div>
+  </div>
+  <p class="comment_content_show"><%= comment.content %></p>
+</div>
