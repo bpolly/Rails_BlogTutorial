@@ -4,6 +4,8 @@
   <% end %>
   <p class="post_author_show">By: <span class="post_author_name"><%= post.author %></span></p>
   <p class="post_date">Posted: <%= post.created_at.strftime("%D") %></p>
+  <p class="post_date">View Count: <%= post.view_count %></p>
+  <p class="post_date">Comment Count: <%= post.comments.count %></p>
   <p class="post_content_show" style="white-space: pre-line; overflow-wrap: break-word;"><%= post.content %></p>
   <% if params[:action] == "show" %>
     <p style="text-align: right"><%= link_to 'Edit', edit_post_path(post), class:"btn btn-xs btn-default" %>

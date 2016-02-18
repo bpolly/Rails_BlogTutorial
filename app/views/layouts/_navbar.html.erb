@@ -13,8 +13,21 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/posts">Posts<span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/posts">All Posts</a></li>
+            <li><a href="/posts?sort_viewed=DESC">Most Viewed</a></li>
+            <li><a href="/posts?sort_viewed=ASC">Least Viewed</a></li>
+            <li><a href="/posts?sort_commented=DESC">Most Commented</a></li>
+            <li><a href="/posts?sort_commented=ASC">Least Commented</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
         <li><a href="/authors">Authors</a></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/posts/new" style="padding: 0"><button class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus"></span> Post</button></a></li>

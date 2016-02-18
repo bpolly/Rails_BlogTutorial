@@ -1,2 +1,18 @@
 <p class="posts_index_header">Posts</p>
-<%= render @posts %>
+<div class="posts_index_container">
+  <div class="col-md-8 col-xs-12">
+    <%= render @posts %>
+  </div>
+
+  <div class="col-md-4 col-xs-0">
+    <div class="hottest_posts_sidebar">
+      <h2 id="hottest_posts_header">Hottest Posts</h1>
+      <ul>
+        <% @hottest_posts[0,5].each do |post| %>
+          <li><%= link_to post.title, post_path(post) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>
